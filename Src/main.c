@@ -59,7 +59,7 @@
 
 #define RUN_NUMBER	300000
 
-//Retarget IO
+//Retarget IO to USART1
 int _write(int file, char *data, int len)
 {
 	HAL_UART_Transmit(&huart1, data, len, len);
@@ -236,15 +236,6 @@ int main(void)
 {
 
   /* USER CODE BEGIN 1 */
-	One_Fifty       Int_1_Loc;
-	REG One_Fifty   Int_2_Loc;
-	One_Fifty       Int_3_Loc;
-	REG char        Ch_Index;
-	Enumeration     Enum_Loc;
-	Str_30          Str_1_Loc;
-	Str_30          Str_2_Loc;
-	REG int         Run_Index;
-	REG int         Number_Of_Runs;
   /* USER CODE END 1 */
 
   /* MCU Configuration----------------------------------------------------------*/
@@ -279,6 +270,16 @@ int main(void)
 
   /* USER CODE BEGIN 2 */
   printf("F072 Dhrystone Test HAL @ %u MHz\n", SystemCoreClock/1000000);
+
+	One_Fifty       Int_1_Loc;
+	REG One_Fifty   Int_2_Loc;
+	One_Fifty       Int_3_Loc;
+	REG char        Ch_Index;
+	Enumeration     Enum_Loc;
+	Str_30          Str_1_Loc;
+	Str_30          Str_2_Loc;
+	REG int         Run_Index;
+	REG int         Number_Of_Runs;
 
    /* Initializations */
     Next_Ptr_Glob = (Rec_Pointer) malloc (sizeof (Rec_Type));
